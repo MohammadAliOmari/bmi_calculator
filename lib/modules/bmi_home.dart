@@ -16,8 +16,10 @@ class _BmiPageState extends State<BmiPage> {
   double height = 120.0;
   int weight = 40;
   int age = 20;
+
   @override
   Widget build(BuildContext context) {
+    double heightres = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: AppBar(
         backgroundColor: const Color(0xFF111328),
@@ -36,8 +38,11 @@ class _BmiPageState extends State<BmiPage> {
               child: Padding(
                 padding: const EdgeInsets.all(20.0),
                 child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Expanded(
+                      flex: heightres > 875 ? 0 : 1,
                       child: GestureDetector(
                         onTap: () {
                           setState(() {
@@ -45,6 +50,7 @@ class _BmiPageState extends State<BmiPage> {
                           });
                         },
                         child: Container(
+                          width: 400,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(
                               10.0,
@@ -80,6 +86,7 @@ class _BmiPageState extends State<BmiPage> {
                       width: 20.0,
                     ),
                     Expanded(
+                      flex: heightres > 875 ? 0 : 1,
                       child: GestureDetector(
                         onTap: () {
                           setState(() {
@@ -87,6 +94,7 @@ class _BmiPageState extends State<BmiPage> {
                           });
                         },
                         child: Container(
+                          width: 400,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(
                               10.0,
@@ -123,11 +131,14 @@ class _BmiPageState extends State<BmiPage> {
               ),
             ),
             Expanded(
+              flex: heightres > 875 ? 0 : 1,
               child: Padding(
                 padding: const EdgeInsets.symmetric(
                   horizontal: 20.0,
                 ),
                 child: Container(
+                  width: 820,
+                  height: 200,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(
                       10.0,
@@ -199,12 +210,16 @@ class _BmiPageState extends State<BmiPage> {
               ),
             ),
             Expanded(
+              flex: heightres > 875 ? 0 : 1,
               child: Padding(
                 padding: const EdgeInsets.all(20.0),
                 child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Expanded(
+                      flex: heightres > 875 ? 0 : 1,
                       child: Container(
+                        width: 400,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(
                             10.0,
@@ -267,7 +282,9 @@ class _BmiPageState extends State<BmiPage> {
                       width: 20.0,
                     ),
                     Expanded(
+                      flex: heightres > 875 ? 0 : 1,
                       child: Container(
+                        width: 400,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(
                             10.0,
@@ -329,7 +346,7 @@ class _BmiPageState extends State<BmiPage> {
               ),
             ),
             Container(
-              width: double.infinity,
+              width: heightres > 875 ? 820 : double.infinity,
               color: const Color(0xFFEB1555),
               child: MaterialButton(
                 onPressed: () {
