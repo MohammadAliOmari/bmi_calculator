@@ -71,6 +71,7 @@ class ResultScreen extends StatelessWidget {
             width: double.infinity,
             color: Color(0xFFEB1555),
             child: MaterialButton(
+              minWidth: double.infinity,
               onPressed: () {
                 Navigator.pop(context);
               },

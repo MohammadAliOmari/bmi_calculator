@@ -261,6 +261,9 @@ class _BmiPageState extends State<BmiPage> {
                                   },
                                   child: const Icon(Icons.remove),
                                 ),
+                                const SizedBox(
+                                  width: 10,
+                                ),
                                 FloatingActionButton(
                                   backgroundColor: const Color(0xFF111328),
                                   mini: true,
@@ -324,6 +327,9 @@ class _BmiPageState extends State<BmiPage> {
                                   },
                                   child: const Icon(Icons.remove),
                                 ),
+                                const SizedBox(
+                                  width: 10,
+                                ),
                                 FloatingActionButton(
                                   backgroundColor: const Color(0xFF111328),
                                   mini: true,
@@ -349,6 +355,7 @@ class _BmiPageState extends State<BmiPage> {
               width: heightres > 875 ? 820 : double.infinity,
               color: const Color(0xFFEB1555),
               child: MaterialButton(
+                minWidth: double.infinity,
                 onPressed: () {
                   CalcBmi calc = CalcBmi(height: height, weight: weight);
                   Navigator.push(
